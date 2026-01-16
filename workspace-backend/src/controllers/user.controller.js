@@ -7,7 +7,6 @@ const tracer = trace.getTracer('user-controller-tracer');
 export const getUsers = async (req, res) => {
     const span = tracer.startSpan('getUsers');
     try {
-        // TODO: Añadir un pequeño timeout dentro del try/catch para simular una operación asíncrona, usando 'await new Promise(resolve => setTimeout(resolve, 100));'. Observar, cómo afecta al span creado
         await new Promise(resolve => setTimeout(resolve, 100));
         const users = getAllUsers();
         span.setAttribute('user.count', users.length);  // Esto es un atributo personalizado
