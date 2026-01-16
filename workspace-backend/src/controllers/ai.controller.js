@@ -27,7 +27,7 @@ export const generateAIResponseWithProvider = async (req, res) => {
         const selectedService = aiServices[provider];
 
         if (!selectedService)
-            return res.status(400).json({ message: 'Provider dont compatible, you must to choose \'openai\', \'ollama\' or \'ollama-local\'.'});
+            return res.status(400).json({ message: 'Provider not supported by the system. You must choose between \'openai\', \'ollama\', and \'ollama-local\'.'});
 
         const aiResponse = await selectedService(prompt);
         res.status(200).json({ response: aiResponse });

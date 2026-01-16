@@ -1,4 +1,6 @@
-# Documento de los entregables realizados
+# Documento de entregables realizados
+
+Este archivo Markdown tendrá como objetivo listar los entregables realizados, además de explicar cómo han sido llevados a cabo para su implementación, especificando las modificaciones en los distintos archivos.
 
 **N0_1:** Proyecto base realizado en clase (con modificaciones propuestas terminadas).
 

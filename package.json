@@ -1,0 +1,14 @@
+{
+  "name": "dev-days-25-26",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd workspace-backend && npm run dev-docker && cd ../ && cd dev-days-25-frontend && npm run dev -- -p 4000",
+    "dev-init-backend": "cd workspace-backend && npm run init-mongo",
+    "dev-backend": "cd workspace-backend && npm run dev-mongo"
+  },
+  "type": "module",
+  "dependencies": {
+  }
+}
