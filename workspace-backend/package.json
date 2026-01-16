@@ -1,0 +1,41 @@
+{
+  "name": "workspace-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/server.js",
+    "dev": "node --env-file-if-exists=.env --watch ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-docker": "cd infrastructure && docker compose -f docker-compose-local.yml --env-file ../.env up -d --force-recreate",
+    "stop-docker": "cd infrastructure && docker compose -f docker-compose-local.yml stop",
+    "remove-docker": "cd infrastructure && docker compose -f docker-compose-local.yml down",
+    "init-mongo": "docker run --name mongodb -d -p 27017:27017 -v mongodb_data:/data/db mongo && npm run dev",
+    "dev-mongo": "docker start mongodb && npm run dev",
+    "stop-mongo": "docker stop mongodb",
+    "remove-mongo": "npm run stop-mongo && docker rm mongodb && docker volume rm mongodb_data"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/instrumentation": "^0.208.0",
+    "@opentelemetry/instrumentation-http": "^0.208.0",
+    "@opentelemetry/resources": "^2.3.0",
+    "@opentelemetry/sdk-metrics": "^2.3.0",
+    "@opentelemetry/sdk-trace-base": "^2.3.0",
+    "@opentelemetry/sdk-trace-node": "^2.3.0",
+    "@opentelemetry/semantic-conventions": "^1.38.0",
+    "@readme/openapi-parser": "^5.5.0",
+    "axios": "^1.13.2",
+    "decircular": "^1.0.0",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "mongoose": "^9.1.3",
+    "ollama": "^0.6.3",
+    "openai": "^6.16.0",
+    "swagger-ui-express": "^5.0.1"
+  }
+}
